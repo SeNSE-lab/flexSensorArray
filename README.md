@@ -48,7 +48,7 @@ occurs via serial.
 - 3D printed motor mount
 - ~100 kOhm resistor
 - M3 harware
-- Various wires
+- Various wires and breadboard
 ## Microcontroller and Motorshield
 This project was designed to be run on an Arduino Mega and use
 [Adafruit Motorshields V2](https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino/overview) 
@@ -56,7 +56,7 @@ If you are stacking shields, make sure to solder the address bits. When initiali
 the integer value of the address pins soldered (e.g. if you solder the two rightmost pins, 
 the address would be 3 - 00011 in binary).
 
-Each Arduino can support up to 16 whiskers and up to 16 stacked shields (though only up to a few are 
+Each Arduino can support up to 16 whiskers and up to 16 stacked shields (though only up to a few shields are 
 expected to be used). Each shield can support up to 2 stepper motors. 
 
 
