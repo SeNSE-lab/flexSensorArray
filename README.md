@@ -113,7 +113,7 @@ A few tips:
 - All hardware components use M3 screws
 - A screw can be removed from the motor housing to allow for the screws holding the limit switch 
 holder to be screwed in all the way
-- The tip flex sensor should be only loosely held by a band, as it needs to slide as the whisker flexes. 
+- The tip of the flex sensor should be only loosely held by a band, as it needs to slide as the whisker flexes. 
 Tape the back of the band if necessary to prevent it from moving along the whisker. Some heat shrink was provided to use as 
 this band, apply heat to make it tighter
 - Ensure the flex sensor is straight when closing the clincher connector
