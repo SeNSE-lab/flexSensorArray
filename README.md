@@ -114,11 +114,12 @@ A few tips:
 - A screw can be removed from the motor housing to allow for the screws holding the limit switch 
 holder to be screwed in all the way
 - The tip flex sensor should be only loosely held by a band, as it needs to slide as the whisker flexes. 
-Tape the back of the band if necessary to prevent it from moving along the whisker. Some head shrink was provided to use as 
+Tape the back of the band if necessary to prevent it from moving along the whisker. Some heat shrink was provided to use as 
 this band, apply heat to make it tighter
 - Ensure the flex sensor is straight when closing the clincher connector
-- The set screws easily strip the plastic motor mounting hubs. Try wedging something thin along the 
-flat side if this is a problem. Or try using a larger diameter screw
+- The 3D printed motor shaft couplers have a hole that allows you to use an M3 screw as a set screw. I may have made the hole diameter a bit too large
+as the set screws easily strip the plastic hole. Try wedging something thin along the 
+flat side of the shaft or taping the shaft to tighten the fit if this is a problem. Or try a larger diamter screw if you have one available.
 
 
 
