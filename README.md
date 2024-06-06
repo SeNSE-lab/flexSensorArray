@@ -1,4 +1,4 @@
-# flexSensor_array
+# flexSensorArray
 ![whisking](media/whisking.gif)
 # Software
 Check scripts for the majority of the documentation. 3 scrips are included here:
