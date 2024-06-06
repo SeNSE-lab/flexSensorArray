@@ -1,5 +1,6 @@
-# flexSensor_array
+# flexSensorArray
 ![whisking](media/whisking.gif)
+
 # Software
 Check scripts for the majority of the documentation. 3 scrips are included here:
 - **flexSensorArray_control.ino** firmware to be loaded onto an Arduino Mega
@@ -7,6 +8,7 @@ Check scripts for the majority of the documentation. 3 scrips are included here:
 designed to be imported into an ipython notebook
 - **controller_notebook.ipynb** notebook used to control the experiment. contains examples for using the flex
 sensor array. designed to be the software interface for the project
+
 ## Arduino Software
 It is recommended to install Arduino IDE 2 on your machine, install required 
 libraries with the Arduino Library Manager, then upload the flexSensorArray_control.ino 
@@ -22,11 +24,13 @@ These should all be available in the Arduino Library Manager
 - Adafruit_MotorShield
 - TimerOne
 - AccelStepper
+
 ## Python
 controller_notebook is designed to be the interface with this project, and 
 ideally is the only file that should be edited. You will need to use a local notebook
 (i.e. not colab, jupyter notebook recommended) as communication with the Arduino 
 occurs via serial.
+
 ### Additional Required Libraries
 - pyserial
 - pandas
@@ -48,7 +52,8 @@ occurs via serial.
 - 3D printed motor mount
 - ~100 kOhm resistor
 - M3 harware
-- Various wires
+- Various wires and breadboard
+
 ## Microcontroller and Motorshield
 This project was designed to be run on an Arduino Mega and use
 [Adafruit Motorshields V2](https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino/overview) 
@@ -56,11 +61,8 @@ If you are stacking shields, make sure to solder the address bits. When initiali
 the integer value of the address pins soldered (e.g. if you solder the two rightmost pins, 
 the address would be 3 - 00011 in binary).
 
-Each Arduino can support up to 16 whiskers and up to 16 stacked shields (though only up to a few are 
+Each Arduino can support up to 16 whiskers and up to 16 stacked shields (though only up to a few shields are 
 expected to be used). Each shield can support up to 2 stepper motors. 
-
-
-
 
 ## Power
 The [stepper motors](https://www.moonsindustries.com/p/nema-17-standard-hybrid-stepper-motors/ms17hd6p4150-000004611110008904)
@@ -97,6 +99,10 @@ want your output voltage to go above 1.1 V.
 ![flexSensor_circuit](media/flexSensor_circuit.png)
 
 ### Limit Switch
+As there is no encoder on the stepper motor, the limit switch is used to find the home/0 steps position of 
+the motor. During the homing procedure (which runs during the MotorController.init() function) the stepper 
+will rotate until the limit tab triggers the limit switch, then record this position as 0 steps.
+
 The two pins closest to the green button/lever hinge are the active pins on the limit switch. One should 
 be wired to one of the even numbered pins starting at 22 on the Arduino, and the other to ground.  
 
@@ -113,12 +119,13 @@ A few tips:
 - All hardware components use M3 screws
 - A screw can be removed from the motor housing to allow for the screws holding the limit switch 
 holder to be screwed in all the way
-- The tip flex sensor should be only loosely held by a band, as it needs to slide as the whisker flexes. 
-Tape the back of the band if necessary to prevent it from moving along the whisker. Some head shrink was provided to use as 
+- The tip of the flex sensor should be only loosely held by a band, as it needs to slide as the whisker flexes. 
+Tape the back of the band if necessary to prevent it from moving along the whisker. Some heat shrink was provided to use as 
 this band, apply heat to make it tighter
 - Ensure the flex sensor is straight when closing the clincher connector
-- The set screws easily strip the plastic motor mounting hubs. Try wedging something thin along the 
-flat side if this is a problem. Or try using a larger diameter screw
+- The 3D printed motor shaft couplers have a hole that allows you to use an M3 screw as a set screw. I may have made the hole diameter a bit too large
+as the set screws easily strip the plastic hole. Try wedging something thin along the 
+flat side of the shaft or taping the shaft to tighten the fit if this is a problem. Or try a larger diamter screw if you have one available.
 
 
 
