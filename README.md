@@ -97,6 +97,10 @@ want your output voltage to go above 1.1 V.
 ![flexSensor_circuit](media/flexSensor_circuit.png)
 
 ### Limit Switch
+As there is no encoder on the stepper motor, the limit switch is used to find the home/0 steps position of 
+the motor. During the homing procedure (which runs during the MotorController.init() function) the stepper 
+will rotate until the limit tab triggers the limit switch, and set this position to 0 steps.
+
 The two pins closest to the green button/lever hinge are the active pins on the limit switch. One should 
 be wired to one of the even numbered pins starting at 22 on the Arduino, and the other to ground.  
 
