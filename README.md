@@ -1,5 +1,6 @@
 # flexSensorArray
 ![whisking](media/whisking.gif)
+
 # Software
 Check scripts for the majority of the documentation. 3 scrips are included here:
 - **flexSensorArray_control.ino** firmware to be loaded onto an Arduino Mega
@@ -7,6 +8,7 @@ Check scripts for the majority of the documentation. 3 scrips are included here:
 designed to be imported into an ipython notebook
 - **controller_notebook.ipynb** notebook used to control the experiment. contains examples for using the flex
 sensor array. designed to be the software interface for the project
+
 ## Arduino Software
 It is recommended to install Arduino IDE 2 on your machine, install required 
 libraries with the Arduino Library Manager, then upload the flexSensorArray_control.ino 
@@ -22,11 +24,13 @@ These should all be available in the Arduino Library Manager
 - Adafruit_MotorShield
 - TimerOne
 - AccelStepper
+
 ## Python
 controller_notebook is designed to be the interface with this project, and 
 ideally is the only file that should be edited. You will need to use a local notebook
 (i.e. not colab, jupyter notebook recommended) as communication with the Arduino 
 occurs via serial.
+
 ### Additional Required Libraries
 - pyserial
 - pandas
@@ -49,6 +53,7 @@ occurs via serial.
 - ~100 kOhm resistor
 - M3 harware
 - Various wires and breadboard
+
 ## Microcontroller and Motorshield
 This project was designed to be run on an Arduino Mega and use
 [Adafruit Motorshields V2](https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino/overview) 
@@ -58,9 +63,6 @@ the address would be 3 - 00011 in binary).
 
 Each Arduino can support up to 16 whiskers and up to 16 stacked shields (though only up to a few shields are 
 expected to be used). Each shield can support up to 2 stepper motors. 
-
-
-
 
 ## Power
 The [stepper motors](https://www.moonsindustries.com/p/nema-17-standard-hybrid-stepper-motors/ms17hd6p4150-000004611110008904)
@@ -99,7 +101,7 @@ want your output voltage to go above 1.1 V.
 ### Limit Switch
 As there is no encoder on the stepper motor, the limit switch is used to find the home/0 steps position of 
 the motor. During the homing procedure (which runs during the MotorController.init() function) the stepper 
-will rotate until the limit tab triggers the limit switch, and set this position to 0 steps.
+will rotate until the limit tab triggers the limit switch, then record this position as 0 steps.
 
 The two pins closest to the green button/lever hinge are the active pins on the limit switch. One should 
 be wired to one of the even numbered pins starting at 22 on the Arduino, and the other to ground.  
