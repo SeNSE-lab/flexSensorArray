@@ -64,6 +64,7 @@ class MotorController(object):
         self.whisking_status = []
         self.whisker_steps = []
         self.whisker_vals = []
+        self.timestamps = []
         self.last_vals = []
         self.last_steps = []
         self.default_prot_steps = prot_steps
@@ -240,6 +241,7 @@ class MotorController(object):
                             sample_count += 1
                             self.data_ready.clear()
                         else:
+                            self.timestamps.append(timestamp)
                             sample_count = 0
                         last_timestamp = timestamp
                         if whisker_id < self.num_whiskers:
